@@ -9,7 +9,8 @@
 Using the base plotting system, make a plot showing the total PM2.5 emission from all
 sources for each of the years 1999, 2002, 2005, and 2008.
 
-
+Yes, total PM 2.5 emissions have significantly declined from 1999 to 2002. 
+Decreasing rate was slower from 2002 to 2005 and, once again, started a faster decrease from 2005 to 2008.
 
 2. Have total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") 
 from 1999 to 2008? Use the base plotting system to make a plot answering this question.
