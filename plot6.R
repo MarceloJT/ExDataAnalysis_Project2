@@ -1,7 +1,7 @@
 ## Exploratory Data Analysis
 ## Project Assignment 02
 
-## plot5.R
+## plot6.R
 
 ###############################################################################
 
