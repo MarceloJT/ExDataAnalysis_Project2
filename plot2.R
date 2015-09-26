@@ -1,7 +1,7 @@
 ## Exploratory Data Analysis
 ## Project Assignment 02
 
-## plot1.R
+## plot2.R
 
 ###############################################################################
 
@@ -22,16 +22,17 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
 # prepare data for the graph
-NEI$MiOfTons <- NEI$Emissions/1000000       ## creates a column for Millions of Tons
-PM25perYr <- tapply(NEI$MiOfTons, NEI$year, sum)
+baltimore <- subset (NEI, fips == "24510")                               ## subsets Baltimore
+baltimore$ThOfTons <- baltimore$Emissions/1000                           ## transforms into Thousands of tons
+baltimorePM25perYr <- tapply(baltimore$ThOfTons, baltimore$year, sum)    ## apply the sum function
 
 ###############################################################################
 
 ## Graph Plotting
-png("plot1.png")
-plot(names(PM25perYr), PM25perYr, type="l", 
-                xlab = "Year", 
-                ylab = expression ("Total" ~ PM[2.5] ~"Emission (millions of tons)"), 
-                main = expression ("Total US" ~ PM[2.5] ~ "Emission"), 
-                col="Blue")
-dev.off()
+png("plot2.png")
+plot(names(baltimorePM25perYr), baltimorePM25perYr, type = "l", 
+        xlab="Year", 
+        ylab= expression("Total" ~ PM[2.5] ~ "Emission (tons x 1000)"), 
+        main=expression("Baltimore City -" ~ PM[2.5] ~ "Total Emission"), 
+        col = "blue")
+dev.off()     
